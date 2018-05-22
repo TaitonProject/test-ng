@@ -1,0 +1,19 @@
+<p>
+  home works!
+</p>
+<div>{{num$ | async}}</div>
+<button (click)="increment()">increment</button>
+<button (click)="decrement()">decrement</button>
+<button (click)="loadData()">load data</button>
+<p>{{data | async | json}}</p>
+
+<input #name type="text">
+<button (click)="createTodo(name.value)">create!</button>
+
+<div>all data</div>
+<div>{{allData | async | json}}</div>
+
+
+<div>result {{result | json}}</div>
+
+<tree-view [tree]="nodes"></tree-view>

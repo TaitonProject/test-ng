@@ -1,0 +1,12 @@
+<ul class="treenodes">
+	<li *ngFor="let node of tree" class="treenode">
+		<button (click)="onExpand(node)">></button>
+
+		<input type="checkbox" [checked]="node.selected" (click)="selectNode(node); setChild(node)">
+		<span>{{node.name}}</span>
+
+		<tree-view *ngIf="node.isExpanded" [tree]="node.children" [SelectedNode]="SelectedNode" (selectedChanged)="selectNode($event)"
+		 (requestNodes)="onExpand($event)" (setChildEvent)="setChild($event)">
+		</tree-view>
+	</li>
+</ul>
